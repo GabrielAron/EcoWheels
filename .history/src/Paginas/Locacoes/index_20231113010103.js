@@ -1,0 +1,1 @@
+centralize horizzontalmente os cards
