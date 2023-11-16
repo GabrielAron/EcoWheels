@@ -6,7 +6,6 @@ import Carro1 from '/imagens/Carro1.jpg';
 const Card = ({ title, image }) => (
   <View style={styles.card}>
     <ImageBackground source={{ uri: image }} style={styles.image} />
-    <View style={styles.overlay} />
     <Text style={styles.title}>{title}</Text>
     <Button title="Reservar" onPress={() => { }} />
   </View>
@@ -68,9 +67,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(128, 128, 128, 0.5)',
   },
 });

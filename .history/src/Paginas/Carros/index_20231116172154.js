@@ -5,8 +5,9 @@ import Carro1 from '/imagens/Carro1.jpg';
 
 const Card = ({ title, image }) => (
   <View style={styles.card}>
-    <ImageBackground source={{ uri: image }} style={styles.image} />
-    <View style={styles.overlay} />
+    <ImageBackground source={{ uri: image }} style={styles.image}>
+      <View style={styles.overlay} />
+    </ImageBackground>
     <Text style={styles.title}>{title}</Text>
     <Button title="Reservar" onPress={() => { }} />
   </View>
