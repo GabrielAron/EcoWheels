@@ -19,7 +19,7 @@ export default function Home() {
           <Text style={styles.buttonTextCadastrar}>Cadastrar</Text>
         </TouchableOpacity>
 
-
+        
       </ImageBackground>
     </View>
   );
@@ -66,5 +66,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-
+  
 });
