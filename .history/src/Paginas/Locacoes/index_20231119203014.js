@@ -7,7 +7,7 @@ const Card = ({ id, title, image }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const { reservas, setReservas } = useContext(ReservaContext);
   const [carros, setCarros] = useState([
-    
+    const carros = [
       { id: 1, title: "QUALIDADE PARA UM CONFORTO E ÓTIMO PASSEIO - Exquisite Cruiser 1.8", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_2.jpg?w=512" },
       { id: 2, title: "DESIGN E CONFORTO EM UM - Rider GT 3.0", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" },
       { id: 3, title: "FORÇA PARA DESAFIOS OFF-Road - Viper GT 3.0 ", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a0fe3adc-2c2f-4336-bc49-e57599170dd1/PhotoReal_faa_um_hummer_eltrico_novo_andando_por_uma_cidade_3.jpg?w=512" },
@@ -15,8 +15,9 @@ const Card = ({ id, title, image }) => {
       { id: 5, title: "UM CARRO VERSÁTIL QUE ATENDE A TODAS AS NECESSIDADES FLEXUS X 1.0", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/f62f0f84-2ea5-4c9d-a4e3-33ade848f3b2/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" },
       { id: 6, title: "UMA OPÇÃO PERFEITA PARA QUEM BUSCA PRATICIDADE E CONFORTO - LUXURY DRIVE 1.6", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/589507b8-d87b-4a85-b05e-c325ccebd6b6/PhotoReal_make_a_background_image_for_a_cell_phone_application_1.jpg?w=512" },
       { id: 7, title: "UM CARRO ESPORTIVO COM DESEMPENHO DE ALTA POTÊNCIA Vortex GT 5.0", image: "https://fotos-jornaldocarro-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/01/13072602/Carro_esportivo.jpg" },
-    ]);
- 
+    ];
+    
+  ]);
 
   return (
     <View style={styles.card}>

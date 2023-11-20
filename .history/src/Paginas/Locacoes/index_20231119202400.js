@@ -3,20 +3,9 @@ import { View, Text, ImageBackground, Button, StyleSheet, ScrollView, Modal, Ale
 import Fundo from '/imagens/fundoverde.jpg';
 import { ReservaContext } from '../ReservaContext'; // Atualize o caminho conforme necessário
 
-const Card = ({ id, title, image }) => {
+const Card = ({ title, image }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const { reservas, setReservas } = useContext(ReservaContext);
-  const [carros, setCarros] = useState([
-    
-      { id: 1, title: "QUALIDADE PARA UM CONFORTO E ÓTIMO PASSEIO - Exquisite Cruiser 1.8", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_2.jpg?w=512" },
-      { id: 2, title: "DESIGN E CONFORTO EM UM - Rider GT 3.0", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" },
-      { id: 3, title: "FORÇA PARA DESAFIOS OFF-Road - Viper GT 3.0 ", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a0fe3adc-2c2f-4336-bc49-e57599170dd1/PhotoReal_faa_um_hummer_eltrico_novo_andando_por_uma_cidade_3.jpg?w=512" },
-      { id: 4, title: "UM CARRO ANTIGO E ESTILOSO PARA OS AMANTES DE CLÁSSICOS - Bentley 1.8", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/c6457b66-6149-4c4d-8408-99c27071dc1e/PhotoReal_faa_um_carro_eletrico_executivo_andando_por_uma_cida_0.jpg?w=512" },
-      { id: 5, title: "UM CARRO VERSÁTIL QUE ATENDE A TODAS AS NECESSIDADES FLEXUS X 1.0", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/f62f0f84-2ea5-4c9d-a4e3-33ade848f3b2/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" },
-      { id: 6, title: "UMA OPÇÃO PERFEITA PARA QUEM BUSCA PRATICIDADE E CONFORTO - LUXURY DRIVE 1.6", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/589507b8-d87b-4a85-b05e-c325ccebd6b6/PhotoReal_make_a_background_image_for_a_cell_phone_application_1.jpg?w=512" },
-      { id: 7, title: "UM CARRO ESPORTIVO COM DESEMPENHO DE ALTA POTÊNCIA Vortex GT 5.0", image: "https://fotos-jornaldocarro-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/01/13072602/Carro_esportivo.jpg" },
-    ]);
- 
 
   return (
     <View style={styles.card}>
@@ -41,14 +30,14 @@ const Card = ({ id, title, image }) => {
             <Text style={styles.modalText}>Deseja mesmo reservar o carro?</Text>
 
             <Button
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => {
-                setReservas([...reservas, { id, title, image }]);
-                setCarros(carros.filter(carro => carro.id !== id));
-                setModalVisible(!modalVisible);
-              }}
-              title="Sim"
-            />
+  style={[styles.button, styles.buttonClose]}
+  onPress={() => {
+    setReservas([...reservas, { id, title, image }]);
+    setModalVisible(!modalVisible);
+  }}
+  title="Sim"
+/>
+
             <Button
               style={[styles.button, styles.buttonCancel]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -68,7 +57,7 @@ export default function Reservas() {
         <Text style={styles.text}>Carros</Text>
         <View style={styles.cardContainer}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Card id={1} title="QUALIDADE PARA UM CONFORTO E ÓTIMO PASSEIO - Exquisite Cruiser 1.8" image="https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_2.jpg?w=512" />
+            <Card id={1} title="QUALIDADE PARA UM CONFORTO E ÓTIMO PASSEIO - Exquisite Cruiser 1.8" image="https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_2.jpg?w=512"/>
             <Card id={2} title="DESIGN E CONFORTO EM UM - Rider GT 3.0" image="https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a40b4ef5-35ec-4e32-a5ff-cc2ef5e85345/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" />
             <Card id={3} title="FORÇA PARA DESAFIOS OFF-Road - Viper GT 3.0 " image="https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/a0fe3adc-2c2f-4336-bc49-e57599170dd1/PhotoReal_faa_um_hummer_eltrico_novo_andando_por_uma_cidade_3.jpg?w=512" />
             <Card id={4} title="UM CARRO ANTIGO E ESTILOSO PARA OS AMANTES DE CLÁSSICOS - Bentley 1.8" image="https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/c6457b66-6149-4c4d-8408-99c27071dc1e/PhotoReal_faa_um_carro_eletrico_executivo_andando_por_uma_cida_0.jpg?w=512" />
@@ -129,7 +118,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#fffbff',
+    color:'#fffbff',
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,

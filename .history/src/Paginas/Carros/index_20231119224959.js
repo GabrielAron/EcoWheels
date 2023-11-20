@@ -15,7 +15,7 @@ const Card = ({ title, image }) => (
 
 export default function Reservas() {
   const { reservas } = useContext(ReservaContext);
-git 
+
   return (
     <View style={styles.container}>
       <ImageBackground source={Fundo} style={styles.image}>

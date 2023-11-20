@@ -15,7 +15,7 @@ const Card = ({ id, title, image }) => {
       { id: 5, title: "UM CARRO VERSÁTIL QUE ATENDE A TODAS AS NECESSIDADES FLEXUS X 1.0", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/f62f0f84-2ea5-4c9d-a4e3-33ade848f3b2/PhotoReal_make_a_background_image_for_a_cell_phone_application_3.jpg?w=512" },
       { id: 6, title: "UMA OPÇÃO PERFEITA PARA QUEM BUSCA PRATICIDADE E CONFORTO - LUXURY DRIVE 1.6", image: "https://cdn.leonardo.ai/users/cf8d0bec-5da3-4e6a-aed2-13735b2a6925/generations/589507b8-d87b-4a85-b05e-c325ccebd6b6/PhotoReal_make_a_background_image_for_a_cell_phone_application_1.jpg?w=512" },
       { id: 7, title: "UM CARRO ESPORTIVO COM DESEMPENHO DE ALTA POTÊNCIA Vortex GT 5.0", image: "https://fotos-jornaldocarro-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/01/13072602/Carro_esportivo.jpg" },
-    ]);
+    ];
  
 
   return (

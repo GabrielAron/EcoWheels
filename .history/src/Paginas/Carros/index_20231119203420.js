@@ -15,7 +15,7 @@ const Card = ({ title, image }) => (
 
 export default function Reservas() {
   const { reservas } = useContext(ReservaContext);
-git 
+
   return (
     <View style={styles.container}>
       <ImageBackground source={Fundo} style={styles.image}>
@@ -33,56 +33,56 @@ git
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#fffbff',
-    fontSize: 36,
-    position: 'absolute',
-    top: 50,
-    left: 0,
-    right: 0,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  cardContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 200,
-    paddingLeft: 75,
-  },
-  card: {
-    width: '90%',
-    height: 200,
-    marginBottom: 45,
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  content: {
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#fffbff',
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(128, 128, 128, 0.5)',
-  },
-});
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    image: {
+      flex: 1,
+      resizeMode: 'cover',
+      justifyContent: 'center',
+    },
+    text: {
+      color: '#fffbff',
+      fontSize: 36,
+      position: 'absolute',
+      top: 50,
+      left: 0,
+      right: 0,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    cardContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: 200,
+      paddingLeft: 75,
+    },
+    card: {
+      width: '90%',
+      height: 200,
+      marginBottom: 45,
+      borderRadius: 10,
+      overflow: 'hidden',
+    },
+    image: {
+      flex: 1,
+      resizeMode: 'cover',
+      justifyContent: 'center',
+    },
+    content: {
+      padding: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      color:'#fffbff',
+    },
+    overlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: 'rgba(128, 128, 128, 0.5)',
+    },
+  });

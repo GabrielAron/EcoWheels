@@ -1,14 +1,11 @@
 import React from 'react';
+import { ReservaProvider } from './ReservaContext';
 import Routes from './src/Paginas/routes';
-import { ReservaProvider } from './src/Paginas/ReservaContext';
 
-
-function App() {
+export default function App() {
   return (
     <ReservaProvider>
       <Routes />
     </ReservaProvider>
   );
 }
-
-export default App;
