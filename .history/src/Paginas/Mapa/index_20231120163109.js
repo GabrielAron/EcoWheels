@@ -41,7 +41,7 @@ const Mapa = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     
   },
   image: {

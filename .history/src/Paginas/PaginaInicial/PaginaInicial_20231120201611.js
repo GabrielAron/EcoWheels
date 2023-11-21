@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import Fundo from '/imagens/fundoverde.jpg';
 
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-});
+})

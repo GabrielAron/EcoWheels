@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import Fundo from '/imagens/fundoverde.jpg';
+import Fundo from './imagens/fundoverde.jpg'; 
 
-const Mapa = () => {
+const App = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
+    // Aqui você pode fazer algo com o valor de searchText
     console.log('Texto de pesquisa:', searchText);
-  };
-
-  const handleClearSearch = () => {
-    setSearchText('');
   };
 
   return (
@@ -26,13 +23,7 @@ const Mapa = () => {
             value={searchText}
             onChangeText={text => setSearchText(text)}
             onSubmitEditing={handleSearch}
-            selectionColor="transparent"
           />
-          {searchText !== '' && (
-            <TouchableOpacity onPress={handleClearSearch}>
-              <FontAwesome name="times" size={20} color="white" style={styles.clearIcon} />
-            </TouchableOpacity>
-          )}
         </View>
       </ImageBackground>
     </View>
@@ -41,7 +32,6 @@ const Mapa = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     
   },
   image: {

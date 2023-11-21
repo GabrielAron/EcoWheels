@@ -42,6 +42,72 @@ const Mapa = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 0,
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    borderRadius: 100,
+    margin: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10, 
+  
+  },
+  icon: {
+    marginRight: 10,
+  },
+  input: {
+    flex: 1,
+    color: 'white',
+    fontSize: 20,
+    outlineColor: 'transparent',
+  },
+  clearIcon: {
+    marginLeft: 10,
+  },
+});
+
+export default Mapa;import React, { useState } from 'react';
+import { ImageBackground, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import Fundo from './imagens/fundoverde.jpg'; 
+
+const App = () => {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = () => {
+    // Aqui você pode fazer algo com o valor de searchText
+    console.log('Texto de pesquisa:', searchText);
+  };
+
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={Fundo} style={styles.image}>
+        <View style={styles.searchContainer}>
+          <FontAwesome name="search" size={20} color="white" style={styles.icon} />
+          <TextInput
+            placeholder="Pesquisar"
+            placeholderTextColor="white"
+            style={styles.input}
+            value={searchText}
+            onChangeText={text => setSearchText(text)}
+            onSubmitEditing={handleSearch}
+          />
+        </View>
+      </ImageBackground>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
     
   },
   image: {
@@ -70,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mapa;
+export default Ma;

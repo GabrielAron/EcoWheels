@@ -42,7 +42,7 @@ const Mapa = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
+    marginTop: 0,
   },
   image: {
     flex: 1,
@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
     borderRadius: 100,
-    marginHorizontal: 20,
+    margin: 20,
     paddingHorizontal: 20,
-    padding:15,
-    marginTop: 30,
-   
+    paddingVertical: 10, 
+  
   },
   icon: {
     marginRight: 10,
@@ -67,6 +67,10 @@ const styles = StyleSheet.create({
     flex: 1,
     color: 'white',
     fontSize: 20,
+    outlineColor: 'transparent',
+  },
+  clearIcon: {
+    marginLeft: 10,
   },
 });
 

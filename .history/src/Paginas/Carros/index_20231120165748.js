@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Text, ImageBackground, StyleSheet, ScrollView } from 'react-native';
 import Fundo from '/imagens/fundoverde.jpg';
-import { ReservaContext } from '../ReservaContext';
+import { ReservaContext } from './ReservaContext';
 
 const Card = ({ title, image }) => (
   <View style={styles.card}>
@@ -15,6 +15,7 @@ const Card = ({ title, image }) => (
 
 export default function Reservas() {
   const { reservas } = useContext(ReservaContext);
+
   return (
     <View style={styles.container}>
       <ImageBackground source={Fundo} style={styles.image}>
@@ -30,7 +31,6 @@ export default function Reservas() {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -64,11 +64,6 @@ const styles = StyleSheet.create({
     marginBottom: 45,
     borderRadius: 10,
     overflow: 'hidden',
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
   },
   content: {
     padding: 10,

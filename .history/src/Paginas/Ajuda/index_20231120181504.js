@@ -53,7 +53,7 @@ const Reservas = () => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('/imagens/fundoverde.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('./fundoverde.jpg')} style={styles.backgroundImage}>
         <View style={styles.overlay}>
           <Text style={styles.header}>Ajuda</Text>
 
