@@ -98,9 +98,10 @@ const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
+    padding: 20,
     width: '90%',
     alignSelf: 'center',
-  
+    marginBottom: 20,
   },
   buttonContainer: {
     width: '30%',
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 1,
   },
-  modalButton: {
+ modalButton: {
     backgroundColor: 'green',
     borderRadius: 5,
     paddingVertical: 10,
@@ -137,6 +138,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
+    marginBottom: 20,
   },
   logo: {
     width: 150,

@@ -17,7 +17,7 @@ export default function Routes() {
     <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={{
-          showLabel: false, 
+          showLabel: false, // Oculta as etiquetas de texto das guias
           inactiveBackgroundColor: '#7A8D6D',
           activeBackgroundColor: '#5A6851',
         }}

@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
+   
     width: '90%',
     alignSelf: 'center',
   

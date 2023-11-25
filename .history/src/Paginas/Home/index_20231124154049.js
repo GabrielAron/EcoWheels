@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Modal, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Modal, TouchableOpacity } from 'react-native';
 import Fundo from '/imagens/fundoverde.jpg';
-import Logo from '/imagens/Logo_EletriCar.png';
 
 export default function Home() {
   const [date, setDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [pickupLocation, setPickupLocation] = useState('');
+  const [dropoffLocation, setDropoffLocation] = useState('');
+  const [password, setPassword] = useState('');
+  const [pickupDate, setPickupDate] = useState('');
+  const [coupon, setCoupon] = useState('');
 
   const handleDateChange = (text) => {
+    // Remover caracteres não numéricos
     const numericText = text.replace(/[^0-9]/g, '');
+
+    // Adicionar barras para formar uma data
     let formattedText = numericText.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+
+    // Limitar o comprimento
     formattedText = formattedText.substring(0, 10);
+
     setDate(formattedText);
   };
 
   const handleReturnDateChange = (text) => {
+    // Remover caracteres não numéricos
     const numericText = text.replace(/[^0-9]/g, '');
+
+    // Adicionar barras para formar uma data
     let formattedText = numericText.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+
+    // Limitar o comprimento
     formattedText = formattedText.substring(0, 10);
+
     setReturnDate(formattedText);
   };
 
@@ -26,27 +42,22 @@ export default function Home() {
     if (date.trim() === '' || returnDate.trim() === '') {
       setShowModal(true);
     } else {
-      // Lógica para continuar
+      // Lógica para continuar para a próxima tela
     }
   };
 
   return (
     <ImageBackground source={Fundo} style={styles.image}>
       <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Image source={Logo} style={styles.logo} resizeMode="contain" />
-        </View>
         <Text style={styles.title}>Digite suas informações</Text>
-        <View style={styles.cardContainer}>
-          <View style={styles.formContainer}>
-            <TextInput style={styles.input} placeholder="Onde você quer retirar o carro" />
-            <TextInput style={styles.input} placeholder="Onde você quer entregar o carro" />
-            <TextInput style={styles.input} placeholder="Data de retirada" keyboardType="numeric" value={date} onChangeText={handleDateChange} />
-            <TextInput style={styles.input} placeholder="Data de entrega" keyboardType="numeric" value={returnDate} onChangeText={handleReturnDateChange} />
-            <TextInput style={styles.input} placeholder="Você tem algum cupom de desconto?" />
-            <View style={styles.buttonContainer}>
-              <Button title="Continuar" onPress={handleContinue} color="green" />
-            </View>
+        <View style={styles.formContainer}>
+          <TextInput style={styles.input} placeholder="Onde você quer retirar o carro" />
+          <TextInput style={styles.input} placeholder="Onde você quer entregar o carro" />
+          <TextInput style={styles.input} placeholder="Data de retirada" keyboardType="numeric" value={date} onChangeText={handleDateChange} />
+          <TextInput style={styles.input} placeholder="Data de entrega" keyboardType="numeric" value={returnDate} onChangeText={handleReturnDateChange} />
+          <TextInput style={styles.input} placeholder="Você tem algum cupom de desconto?" />
+          <View style={styles.buttonContainer}>
+            <Button title="Continuar" onPress={handleContinue} color="green" />
           </View>
         </View>
         <Modal visible={showModal} animationType="fade" transparent>
@@ -82,11 +93,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#fff',
   },
-  cardContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   input: {
     height: 40,
     borderColor: 'gray',
@@ -98,48 +104,42 @@ const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    width: '90%',
+    padding: 10,
+    width: '80%', // Tornar o card menos largo
     alignSelf: 'center',
-  
+    paddingVertical: 20, // Aumentar a altura vertical
   },
   buttonContainer: {
-    width: '30%',
-    alignSelf: 'center',
-    marginTop: 10,
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 20,
-    alignItems: 'center',
-    elevation: 5,
-  },
-  modalText: {
-    fontSize: 18,
-    marginBottom: 1,
-  },
-  modalButton: {
-    backgroundColor: 'green',
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  modalButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  logoContainer: {
-    alignItems: 'center',
-  },
-  logo: {
-    width: 150,
-    height: 150,
-  },
+  width: '30%',
+  alignSelf: 'center',
+  marginTop: 10,
+},
+modalContainer: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+},
+modalContent: {
+  backgroundColor: 'white',
+  borderRadius: 10,
+  padding: 20,
+  alignItems: 'center',
+  elevation: 5,
+},
+modalText: {
+  fontSize: 18,
+  marginBottom: 20,
+},
+modalButton: {
+  backgroundColor: 'green',
+  borderRadius: 5,
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+},
+modalButtonText: {
+  color: 'white',
+  fontWeight: 'bold',
+  fontSize: 16,
+},
 });

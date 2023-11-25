@@ -17,14 +17,17 @@ export default function Routes() {
     <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={{
-          showLabel: false, 
+          showLabel: false, // Oculta as etiquetas de texto das guias
+          tabBarStyle: {
+            position: 'absolute',
+            backgroundColor: '#7A8D6D',
+            height:700,
+          },
+          tabStyle: {
+            elevation: 0,
+          },
           inactiveBackgroundColor: '#7A8D6D',
           activeBackgroundColor: '#5A6851',
-        }}
-        style={{
-          position: 'absolute',
-          backgroundColor: '#7A8D6D',
-          height: 100, 
         }}
       >
         <Tab.Screen
@@ -104,10 +107,10 @@ export default function Routes() {
             headerShown: false,
             tabBarIcon: ({ color, size, focused }) => {
               if (focused) {
-                return <Ionicons name="logo-usd" size={23} color="#FFF" />;
-                
+                return <Ionicons name="md-car" size={23} color="#FFF" />;
+                <ion-icon name="cash-outline"></ion-icon>
               } else {
-                return <Ionicons name="logo-usd" size={23} color="#000000" />;
+                return <Ionicons name="md-car-outline" size={23} color="#000000" />;
               }
             },
           }}

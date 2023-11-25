@@ -17,14 +17,14 @@ export default function Routes() {
     <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={{
-          showLabel: false, 
+          showLabel: false, // Oculta as etiquetas de texto das guias
           inactiveBackgroundColor: '#7A8D6D',
           activeBackgroundColor: '#5A6851',
         }}
         style={{
           position: 'absolute',
           backgroundColor: '#7A8D6D',
-          height: 100, 
+          height: 100, // Ajuste este valor para alterar a altura da barra de guias
         }}
       >
         <Tab.Screen

@@ -9,16 +9,23 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
 
   const handleDateChange = (text) => {
+ 
     const numericText = text.replace(/[^0-9]/g, '');
+  
     let formattedText = numericText.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+
     formattedText = formattedText.substring(0, 10);
+
     setDate(formattedText);
   };
 
   const handleReturnDateChange = (text) => {
     const numericText = text.replace(/[^0-9]/g, '');
+
     let formattedText = numericText.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+
     formattedText = formattedText.substring(0, 10);
+
     setReturnDate(formattedText);
   };
 
@@ -26,27 +33,26 @@ export default function Home() {
     if (date.trim() === '' || returnDate.trim() === '') {
       setShowModal(true);
     } else {
-      // Lógica para continuar
+      
     }
   };
 
   return (
     <ImageBackground source={Fundo} style={styles.image}>
+      
       <View style={styles.container}>
-        <View style={styles.logoContainer}>
+      <View style={styles.logoContainer}>
           <Image source={Logo} style={styles.logo} resizeMode="contain" />
         </View>
         <Text style={styles.title}>Digite suas informações</Text>
-        <View style={styles.cardContainer}>
-          <View style={styles.formContainer}>
-            <TextInput style={styles.input} placeholder="Onde você quer retirar o carro" />
-            <TextInput style={styles.input} placeholder="Onde você quer entregar o carro" />
-            <TextInput style={styles.input} placeholder="Data de retirada" keyboardType="numeric" value={date} onChangeText={handleDateChange} />
-            <TextInput style={styles.input} placeholder="Data de entrega" keyboardType="numeric" value={returnDate} onChangeText={handleReturnDateChange} />
-            <TextInput style={styles.input} placeholder="Você tem algum cupom de desconto?" />
-            <View style={styles.buttonContainer}>
-              <Button title="Continuar" onPress={handleContinue} color="green" />
-            </View>
+        <View style={styles.formContainer}>
+          <TextInput style={styles.input} placeholder="Onde você quer retirar o carro" />
+          <TextInput style={styles.input} placeholder="Onde você quer entregar o carro" />
+          <TextInput style={styles.input} placeholder="Data de retirada" keyboardType="numeric" value={date} onChangeText={handleDateChange} />
+          <TextInput style={styles.input} placeholder="Data de entrega" keyboardType="numeric" value={returnDate} onChangeText={handleReturnDateChange} />
+          <TextInput style={styles.input} placeholder="Você tem algum cupom de desconto?" />
+          <View style={styles.buttonContainer}>
+            <Button title="Continuar" onPress={handleContinue} color="green" />
           </View>
         </View>
         <Modal visible={showModal} animationType="fade" transparent>
@@ -82,11 +88,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#fff',
   },
-  cardContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   input: {
     height: 40,
     borderColor: 'gray',
@@ -98,9 +99,10 @@ const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    width: '90%',
+    padding: 10,
+    width: '80%', 
     alignSelf: 'center',
-  
+    paddingVertical: 20, 
   },
   buttonContainer: {
     width: '30%',
@@ -120,9 +122,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     elevation: 5,
   },
-  modalText: {
+ modalText: {
     fontSize: 18,
-    marginBottom: 1,
+    marginBottom: 20,
   },
   modalButton: {
     backgroundColor: 'green',
@@ -136,10 +138,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   logoContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    marginBottom: 20,
   },
   logo: {
     width: 150,
     height: 150,
   },
+
 });
